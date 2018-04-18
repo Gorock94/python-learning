@@ -1,0 +1,11 @@
+a = int(input("vvedite chislo "))
+b = int(input("vvedite eshe odno "))
+c = input("i wto vi budete delat? + -- / * ")
+if c == "+":
+    print(a + b)
+elif c == "--":
+    print(a - b)
+elif c == "/":
+    print(a / b)
+elif c == "*":
+    print(a * b)
