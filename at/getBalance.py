@@ -41,8 +41,13 @@ def getMoney(num):
     passwordField.send_keys('test12')
     driver.find_element_by_class_name("ui-button-but").click()
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "gadget_account")))
-    money = driver.find_element_by_css_selector('[class="gadget_account"]').find_element_by_css_selector('div h3').text
-    l = []
+    w =  driver.find_element_by_css_selector('h1').text
+    if w != "Вход":
+        money = driver.find_element_by_css_selector('[class="gadget_account"]').find_element_by_css_selector('div h3').text
+        l = []
+    else:
+        money = "error"
+        l = []
     for i in money:
         if i != ' ':
             l.append(i)
